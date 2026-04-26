@@ -1,0 +1,186 @@
+{
+  "layer": "bottom",
+  "position": "top",
+  "height": 34,
+  "spacing": 4,
+  "margin-top": 6,
+  "margin-left": 8,
+  "margin-right": 8,
+  "margin-bottom": 0,
+  "exclusive": true,
+  "gtk-layer-shell": true,
+  "passthrough": false,
+  "fixed-center": false,
+
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["mpris"],
+  "modules-right": [
+    "temperature",
+    "network",
+    "pulseaudio",
+    "custom/mic",
+    "power-profiles-daemon",
+    "battery",
+    "backlight",
+    "bluetooth",
+    "clock",
+    "clock#simpleclock",
+    "tray"
+  ],
+
+  "hyprland/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": true,
+    "format": "{name}"
+  },
+
+  "mpris": {
+    "interval": 5,
+    "player": "spotify",
+    "dynamic-order": ["artist", "title"],
+    "dynamic-importance-order": ["title", "artist"],
+    "dynamic-separator": " • ",
+    "format": "{player_icon} {dynamic}",
+    "format-paused": "{status_icon} <i>{dynamic}</i>",
+    "format-stopped": "{player_icon}",
+    "tooltip-format": "<b>{title}</b>\n{artist}\n{album}\n{position}/{length}",
+    "tooltip-format-paused": "<b>{title}</b>\n{artist}\n{album}\nPaused • {position}/{length}",
+    "tooltip-format-stopped": "{player}",
+    "enable-tooltip-len-limits": true,
+    "artist-len": 18,
+    "album-len": 24,
+    "title-len": 24,
+    "dynamic-len": 34,
+    "max-length": 38,
+    "expand": true,
+    "ellipsis": "...",
+    "status-icons": {
+      "paused": "",
+      "stopped": ""
+    },
+    "player-icons": {
+      "default": "",
+      "spotify": "",
+      "firefox": "󰈹",
+      "chromium": "",
+      "vlc": "󰕼",
+      "mpv": "󰐹"
+    }
+  },
+
+  "temperature": {
+    "interval": 10,
+    "critical-threshold": 80,
+    "format": " {temperatureC}°C"
+  },
+
+  "network": {
+    "interval": 10,
+    "format-wifi": "{icon} {essid}",
+    "format-ethernet": "󰈀 wired",
+    "format-linked": "󰈀 link",
+    "format-disconnected": "󰖪 offline",
+    "format-disabled": "󰖪 blocked",
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "tooltip-format": "{ifname}",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ipaddr} via {gwaddr}",
+    "tooltip-format-ethernet": "{ifname}\n{ipaddr} via {gwaddr}",
+    "tooltip-format-disconnected": "Disconnected",
+    "tooltip-format-disabled": "Wi-Fi blocked",
+    "max-length": 18,
+    "on-click": "nm-connection-editor"
+  },
+
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "{profile}",
+    "format-icons": {
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    },
+    "on-click": "powerprofilesctl set performance",
+    "on-click-right": "powerprofilesctl set balanced",
+    "on-click-middle": "powerprofilesctl set power-saver"
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": " muted",
+    "format-icons": {
+      "headphone": "",
+      "default": ["", "", ""]
+    },
+    "max-length": 12,
+    "on-click": "pavucontrol"
+  },
+
+  "custom/mic": {
+    "format": "{}",
+    "exec": "pamixer --default-source --get-volume-human",
+    "on-click": "pamixer --default-source -t",
+    "on-scroll-up": "pamixer --default-source -i 5",
+    "on-scroll-down": "pamixer --default-source -d 5",
+    "interval": 15,
+    "tooltip": false
+  },
+
+  "battery": {
+    "interval": 30,
+    "states": {
+      "good": 80,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["", "", "", "", ""]
+  },
+
+  "backlight": {
+    "format": "󰃠 {percent}%"
+  },
+
+  "bluetooth": {
+    "format": " {status}",
+    "format-disabled": " off",
+    "format-off": " off",
+    "format-on": " on",
+    "format-connected": " {device_alias}",
+    "tooltip-format": "{controller_alias}\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\n{num_connections} connected\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "max-length": 18,
+    "on-click": "blueman-manager"
+  },
+
+  "tray": {
+    "show-passive-items": true,
+    "icon-size": 16,
+    "spacing": 4
+  },
+
+  "clock": {
+    "format": " {:L%a %d %b}",
+    "calendar": {
+      "format": {
+        "days": "<span weight='normal'>{}</span>",
+        "months": "<span color='#ffffff'><b>{}</b></span>",
+        "today": "<span color='#ffffff' weight='700'><u>{}</u></span>",
+        "weekdays": "<span color='#d9d9d9'><b>{}</b></span>",
+        "weeks": "<span color='#8c8c8c'><b>W{}</b></span>"
+      },
+      "mode": "month",
+      "mode-mon-col": 1,
+      "on-scroll": 1
+    },
+    "tooltip-format": "<span color='#ffffff' font='Lexend 16'><tt><small>{calendar}</small></tt></span>"
+  },
+
+  "clock#simpleclock": {
+    "tooltip": false,
+    "format": " {:%H:%M}"
+  }
+}
