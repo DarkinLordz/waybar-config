@@ -19,7 +19,6 @@
     "network",
     "pulseaudio",
     "custom/mic",
-    "power-profiles-daemon",
     "battery",
     "backlight",
     "bluetooth",
@@ -89,19 +88,6 @@
     "tooltip-format-disabled": "Wi-Fi blocked",
     "max-length": 18,
     "on-click": "nm-connection-editor"
-  },
-
-  "power-profiles-daemon": {
-    "format": "{icon}",
-    "tooltip-format": "{profile}",
-    "format-icons": {
-      "performance": "",
-      "balanced": "",
-      "power-saver": ""
-    },
-    "on-click": "powerprofilesctl set performance",
-    "on-click-right": "powerprofilesctl set balanced",
-    "on-click-middle": "powerprofilesctl set power-saver"
   },
 
   "pulseaudio": {
