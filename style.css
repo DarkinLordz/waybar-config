@@ -31,7 +31,6 @@ window#waybar {
 }
 
 #workspaces,
-#mpris,
 #temperature,
 #network,
 #pulseaudio,
@@ -81,7 +80,6 @@ window#waybar {
     color: @text;
 }
 
-#mpris:hover,
 #temperature:hover,
 #network:hover,
 #pulseaudio:hover,
@@ -94,11 +92,6 @@ window#waybar {
 #tray:hover {
     background-color: @module-hover;
     border-color: @border;
-}
-
-#mpris {
-    padding-left: 12px;
-    padding-right: 12px;
 }
 
 #pulseaudio.muted,

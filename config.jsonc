@@ -13,7 +13,6 @@
   "fixed-center": false,
 
   "modules-left": ["hyprland/workspaces"],
-  "modules-center": ["mpris"],
   "modules-right": [
     "temperature",
     "network",
@@ -31,40 +30,6 @@
     "disable-scroll": false,
     "all-outputs": true,
     "format": "{name}"
-  },
-
-  "mpris": {
-    "interval": 5,
-    "player": "spotify",
-    "dynamic-order": ["artist", "title"],
-    "dynamic-importance-order": ["title", "artist"],
-    "dynamic-separator": " • ",
-    "format": "{player_icon} {dynamic}",
-    "format-paused": "{status_icon} <i>{dynamic}</i>",
-    "format-stopped": "{player_icon}",
-    "tooltip-format": "<b>{title}</b>\n{artist}\n{album}\n{position}/{length}",
-    "tooltip-format-paused": "<b>{title}</b>\n{artist}\n{album}\nPaused • {position}/{length}",
-    "tooltip-format-stopped": "{player}",
-    "enable-tooltip-len-limits": true,
-    "artist-len": 18,
-    "album-len": 24,
-    "title-len": 24,
-    "dynamic-len": 34,
-    "max-length": 38,
-    "expand": true,
-    "ellipsis": "...",
-    "status-icons": {
-      "paused": "",
-      "stopped": ""
-    },
-    "player-icons": {
-      "default": "",
-      "spotify": "",
-      "firefox": "󰈹",
-      "chromium": "",
-      "vlc": "󰕼",
-      "mpv": "󰐹"
-    }
   },
 
   "temperature": {
@@ -150,19 +115,7 @@
 
   "clock": {
     "format": " {:L%a %d %b}",
-    "calendar": {
-      "format": {
-        "days": "<span weight='normal'>{}</span>",
-        "months": "<span color='#ffffff'><b>{}</b></span>",
-        "today": "<span color='#ffffff' weight='700'><u>{}</u></span>",
-        "weekdays": "<span color='#d9d9d9'><b>{}</b></span>",
-        "weeks": "<span color='#8c8c8c'><b>W{}</b></span>"
-      },
-      "mode": "month",
-      "mode-mon-col": 1,
-      "on-scroll": 1
-    },
-    "tooltip-format": "<span color='#ffffff' font='Lexend 16'><tt><small>{calendar}</small></tt></span>"
+    "tooltip": false
   },
 
   "clock#simpleclock": {
