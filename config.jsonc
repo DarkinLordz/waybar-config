@@ -70,8 +70,8 @@
     "format": "{}",
     "exec": "pamixer --default-source --get-volume-human",
     "on-click": "pamixer --default-source -t",
-    "on-scroll-up": "pamixer --default-source -i 2",
-    "on-scroll-down": "pamixer --default-source -d 2",
+    "on-scroll-up": "pamixer --default-source -i 1",
+    "on-scroll-down": "pamixer --default-source -d 1",
     "interval": 15,
     "tooltip": false
   },
